@@ -8,3 +8,23 @@ services:
       - ./config:/opt/stellar
       - ./data:/opt/stellar/data
     restart: always
+
+  rpc2:
+    build: .
+    platform: linux/amd64
+    ports:
+      - "8001:8000"
+    volumes:
+      - ./config:/opt/stellar
+      - ./data:/opt/stellar/data
+    restart: always
+
+  rpc3:
+    build: .
+    platform: linux/amd64
+    ports:
+      - "8002:8000"
+    volumes:
+      - ./config:/opt/stellar
+      - ./data:/opt/stellar/data
+    restart: always
