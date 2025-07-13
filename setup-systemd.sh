@@ -1,34 +1,31 @@
 #!/bin/bash
 
-# This script sets up your stellar-rpc-node-instance-testnet Docker Compose app to run as a systemd service
-
-SERVICE_NAME="stellar-rpc-node-instance-testnet"
+SERVICE_NAME="sstellar-rpc-node-instance-testnet"
 APP_DIR="/home/jideotetic/stellar-rpc-node-instance-testnet"
 REPO_URL="git@github.com:Jideotetic/stellar-rpc-node-instance-testnet.git"
 DOCKER_COMPOSE_BIN="/usr/bin/docker compose"
 SERVICE_FILE="/etc/systemd/system/${SERVICE_NAME}.service"
 
-# Check if app directory exists
 if [ ! -d "$APP_DIR" ]; then
   echo "❌ Error: App directory $APP_DIR does not exist."
   exit 1
 fi
 
-# Check if docker compose exists
-if [ ! -z "$DOCKER_COMPOSE_BIN" ]; then
-  echo "❌ Error: Docker Compose not found at $DOCKER_COMPOSE_BIN. Is Docker installed?"
+if [ -z "$DOCKER_COMPOSE_BIN" ]; then
+  echo "❌ Error: Docker Compose not found. Is Docker installed?"
   exit 1
 fi
 
 echo "🧼 Cleaning up unused Docker resources..."
 docker system prune -f
 
-echo "🔄 Pulling latest changes from repo..."
+echo "🔄 Pulling latest changes..."
 cd "$APP_DIR"
 git pull origin main || echo "⚠️ Git pull failed or not a git repo, continuing..."
 
 echo "🔧 Creating systemd service file at $SERVICE_FILE..."
 
+# Properly write the service file with variables expanded
 sudo tee "$SERVICE_FILE" > /dev/null <<EOF
 [Unit]
 Description=Docker Compose App - $SERVICE_NAME
@@ -57,9 +54,7 @@ read -p "🚀 Do you want to start the app now? (y/n): " choice
 
 if [[ "$choice" =~ ^[Yy]$ ]]; then
   sudo systemctl start ${SERVICE_NAME}.service
-  echo "✅ Service started. You can check status with:"
-  echo "   sudo systemctl status ${SERVICE_NAME}.service"
+  echo "✅ Service started. You can run: sudo systemctl status ${SERVICE_NAME}.service"
 else
-  echo "ℹ️ You can start it manually with:"
-  echo "   sudo systemctl start ${SERVICE_NAME}.service"
+  echo "ℹ️ You can start it manually with: sudo systemctl start ${SERVICE_NAME}.service"
 fi
