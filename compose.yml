@@ -1,7 +1,6 @@
 services:
   rpc1:
     build: .
-    platform: linux/amd64
     ports:
       - "8000:8000"
     volumes:
@@ -11,7 +10,6 @@ services:
 
   rpc2:
     build: .
-    platform: linux/amd64
     ports:
       - "8001:8000"
     volumes:
@@ -21,7 +19,6 @@ services:
 
   rpc3:
     build: .
-    platform: linux/amd64
     ports:
       - "8002:8000"
     volumes:
