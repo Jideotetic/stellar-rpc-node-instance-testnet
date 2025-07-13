@@ -1,1 +1,3 @@
-/data/db/*
+/data/db/soroban_rpc.sqlite
+/data/db/soroban_rpc.sqlite-shm
+/data/db/soroban_rpc.sqlite-wal
