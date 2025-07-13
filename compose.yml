@@ -1,0 +1,11 @@
+services:
+  rpc1:
+    build: .
+    platform: linux/amd64
+    ports:
+      - "8000:8000"
+      - "8001:8001"
+    volumes:
+      - ./config:/opt/stellar
+      - ./data:/opt/stellar/data
+    restart: always
