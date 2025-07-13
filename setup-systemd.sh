@@ -5,7 +5,7 @@
 SERVICE_NAME="stellar-rpc-node-instance-testnet"
 APP_DIR="/home/jideotetic/stellar-rpc-node-instance-testnet"
 REPO_URL="git@github.com:Jideotetic/stellar-rpc-node-instance-testnet.git"
-DOCKER_COMPOSE_BIN="docker compose"
+DOCKER_COMPOSE_BIN="/usr/bin/docker compose"
 SERVICE_FILE="/etc/systemd/system/${SERVICE_NAME}.service"
 
 # Check if app directory exists
@@ -15,7 +15,7 @@ if [ ! -d "$APP_DIR" ]; then
 fi
 
 # Check if docker compose exists
-if [ ! -x "$DOCKER_COMPOSE_BIN" ]; then
+if [ ! -z "$DOCKER_COMPOSE_BIN" ]; then
   echo "❌ Error: Docker Compose not found at $DOCKER_COMPOSE_BIN. Is Docker installed?"
   exit 1
 fi
