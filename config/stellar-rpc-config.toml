@@ -9,7 +9,7 @@
 CAPTIVE_CORE_CONFIG_PATH = "/opt/stellar/stellar-captive-core-testnet.cfg"
 
 # Storage location for Captive Core bucket data
-CAPTIVE_CORE_STORAGE_PATH = "/"
+CAPTIVE_CORE_STORAGE_PATH = "/opt/stellar/data/captive-core"
 
 # establishes how many ledgers exist between checkpoints, do NOT change this
 # unless you really know what you are doing
@@ -35,13 +35,13 @@ DEFAULT_TRANSACTIONS_LIMIT = 50
 ENDPOINT = "0.0.0.0:8000"
 
 # The friendbot URL to be returned by getNetwork endpoint
-# FRIENDBOT_URL = ""
+# FRIENDBOT_URL = "https://friendbot.stellar.org"
 
 # comma-separated list of stellar history archives to connect with
 HISTORY_ARCHIVE_URLS = [
-    "https://history.stellar.org/prd/core-testnet/core_testnet_001",
+    "http://history.stellar.org/prd/core-testnet/core_testnet_001",
     "http://history.stellar.org/prd/core-testnet/core_testnet_002",
-    "http://history.stellar.org/prd/core-testnet/core_testnet_002"
+    "http://history.stellar.org/prd/core-testnet/core_testnet_003"
     ]
 
 # configures history retention window for transactions and events, expressed in
