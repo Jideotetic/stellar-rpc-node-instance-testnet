@@ -36,7 +36,7 @@ After=docker.service
 Type=oneshot
 RemainAfterExit=true
 WorkingDirectory=$APP_DIR
-ExecStart=$DOCKER_COMPOSE_BIN up -d --build
+ExecStart=$DOCKER_COMPOSE_BIN up -d --pull always
 ExecStop=$DOCKER_COMPOSE_BIN down --volumes --remove-orphans
 TimeoutStartSec=0
 
