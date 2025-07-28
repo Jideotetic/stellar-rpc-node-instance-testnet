@@ -1,7 +1,7 @@
 #!/bin/bash
 
 SERVICE_NAME="stellar-rpc-node-instance-testnet"
-APP_DIR="/home/jideotetic/stellar-rpc-node-instance-testnet"
+APP_DIR="/home/tinkerpal/stellar-rpc-node-instance-testnet"
 REPO_URL="git@github.com:Jideotetic/stellar-rpc-node-instance-testnet.git"
 DOCKER_COMPOSE_BIN="/usr/bin/docker compose"
 SERVICE_FILE="/etc/systemd/system/${SERVICE_NAME}.service"
