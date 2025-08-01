@@ -5,7 +5,7 @@ WORKDIR /app
 COPY . .
 
 COPY ./config/stellar-rpc-config.toml /opt/stellar/stellar-rpc-config.toml
-COPY ./config/stellar-captive-core-pubnet.cfg /opt/stellar/stellar-captive-core-pubnet.cfg
+COPY ./config/stellar-captive-core-testnet.cfg /opt/stellar/stellar-captive-core-testnet.cfg
 
 RUN mkdir -p /opt/stellar/data/db
 
