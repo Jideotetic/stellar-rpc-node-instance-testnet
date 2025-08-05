@@ -2,23 +2,5 @@ services:
   stellar-rpc-node-instance-testnet1:
     ports:
       - "8000:8000"
-    image: jideotetic/stellar-rpc-node-instance-testnet:latest
+    image: stellar-rpc-node-instance-testnet
     restart: always
-
-  # stellar-rpc-node-instance-testnet2:
-  #   ports:
-  #     - "8001:8000"
-  #   image: jideotetic/stellar-rpc-node-instance-testnet:latest
-  #   volumes:
-  #     - ./config:/opt/stellar
-  #     - ./data:/opt/stellar/data
-  #   restart: always
-
-  # stellar-rpc-node-instance-testnet3:
-  #   ports:
-  #     - "8002:8000"
-  #   image: jideotetic/stellar-rpc-node-instance-testnet:latest
-  #   volumes:
-  #     - ./config:/opt/stellar
-  #     - ./data:/opt/stellar/data
-  #   restart: always
