@@ -1,5 +1,5 @@
 services:
-  stellar-rpc-node-instance-testnet1:
+  stellar-rpc-node-instance-testnet:
     ports:
       - "8000:8000"
     image: stellar-rpc-node-instance-testnet

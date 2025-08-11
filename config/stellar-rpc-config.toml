@@ -38,7 +38,10 @@ ENDPOINT = "0.0.0.0:8000"
 # FRIENDBOT_URL = "https://friendbot.stellar.org"
 
 # comma-separated list of stellar history archives to connect with
-HISTORY_ARCHIVE_URLS = [ "http://history.stellar.org/prd/core-testnet/core_testnet_001" ]
+HISTORY_ARCHIVE_URLS = [ "http://history.stellar.org/prd/core-testnet/core_testnet_001", 
+                         "http://history.stellar.org/prd/core-testnet/core_testnet_002",
+                         "http://history.stellar.org/prd/core-testnet/core_testnet_003"
+                        ]
 
 # configures history retention window for transactions and events, expressed in
 # number of ledgers, the default value is 120960 which corresponds to about 7
@@ -53,7 +56,7 @@ INGESTION_TIMEOUT = "50m0s"
 # LOG_FORMAT = "json"
 
 # minimum log severity (debug, info, warn, error) to log
-LOG_LEVEL = "info"
+LOG_LEVEL = "debug"
 
 # Maximum amount of events allowed in a single getEvents response
 MAX_EVENTS_LIMIT = 10000

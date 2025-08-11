@@ -1,4 +1,4 @@
-FROM stellar/stellar-rpc:23.0.0-rc2-127
+FROM stellar/stellar-rpc:23.0.0-rc2-122
 
 WORKDIR /app
 
