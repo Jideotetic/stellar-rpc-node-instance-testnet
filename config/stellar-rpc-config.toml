@@ -46,7 +46,7 @@ HISTORY_ARCHIVE_URLS = [ "http://history.stellar.org/prd/core-testnet/core_testn
 # configures history retention window for transactions and events, expressed in
 # number of ledgers, the default value is 120960 which corresponds to about 7
 # days of history
-HISTORY_RETENTION_WINDOW = 120960
+HISTORY_RETENTION_WINDOW = 51840
 
 # Ingestion Timeout when bootstrapping data (checkpoint and in-memory
 # initialization) and preparing ledger reads
@@ -143,7 +143,7 @@ NETWORK_PASSPHRASE = "Test SDF Network ; September 2015"
 
 # Enable debug information in preflighting (provides more detailed errors). It
 # should not be enabled in production deployments.
-PREFLIGHT_ENABLE_DEBUG = true
+PREFLIGHT_ENABLE_DEBUG = false
 
 # Number of workers (read goroutines) used to compute preflights for the
 # simulateTransaction endpoint. Defaults to the number of CPUs.
