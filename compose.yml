@@ -4,3 +4,10 @@ services:
       - "8000:8000"
     image: stellar-rpc-node-instance-testnet
     restart: always
+    volumes:
+      - captive-core-data:/opt/stellar/data/captive-core
+      - rpc-db:/opt/stellar/data/db
+
+volumes:
+  captive-core-data:
+  rpc-db:
